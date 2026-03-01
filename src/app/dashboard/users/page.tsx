@@ -5,7 +5,7 @@ import { AdminUserPanel } from "@/components/features/dashboard/admin-user-panel
 
 export default async function AdminUsersPage() {
   const session = await auth();
-  if (!session?.user) redirect("/login");
+  if (!session?.user) redirect("/");
 
   const users = await getAllUsers();
 

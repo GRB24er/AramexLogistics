@@ -7,7 +7,7 @@ import { AdminVaultCreate } from "@/components/features/dashboard/admin-vault-cr
 
 export default async function AdminVaultPage() {
   const session = await auth();
-  if (session?.user?.role !== "ADMIN") return redirect("/login");
+  if (session?.user?.role !== "ADMIN") return redirect("/");
 
   const [deposits, clients] = await Promise.all([
     getAllVaultDeposits(),

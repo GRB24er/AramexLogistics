@@ -5,7 +5,7 @@ import { auth } from "~/auth";
 
 export default async function Page() {
   const session = await auth();
-  if (session?.user.role !== "ADMIN") return redirect("/login");
+  if (session?.user?.role !== "ADMIN") return redirect("/");
 
   return (
     <div>

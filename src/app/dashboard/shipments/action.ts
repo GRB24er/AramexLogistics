@@ -64,7 +64,7 @@ async function sendStatusEmail(email: string, name: string, trackingNumber: stri
 
 export async function updateTrackingStatus(formData: FormData) {
   const session = await auth();
-  if (session?.user.role !== "ADMIN") return redirect("/login");
+  if (session?.user?.role !== "ADMIN") return redirect("/");
 
   const rawData = {
     shipmentId: formData.get("shipmentId"), trackingUpdateId: formData.get("trackingUpdateId"),

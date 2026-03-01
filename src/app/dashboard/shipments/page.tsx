@@ -25,7 +25,7 @@ function mapStatus(trackingUpdates: { status: string | null }[]): "Delivered" | 
 const ShipmentsPageWrapper = async () => {
   const session = await auth();
   if (!session?.user) {
-    return redirect("/login");
+    return redirect("/");
   }
 
   const data = await prisma.shipment.findMany({
