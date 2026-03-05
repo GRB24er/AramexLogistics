@@ -636,7 +636,7 @@ model VaultInvoice {
   paymentRef      String?
   notes           String?
   deposit         VaultDeposit    @relation(fields: [depositId], references: [id], onDelete: Cascade)
-  client          User            @relation("VaultInvoices", fields: [clientId], references: [id])
+  client          User            @relation("VaultInvoices", fields: [clientId], references: [id], onDelete: Cascade)
   items           VaultInvoiceItem[]
   createdAt       DateTime        @default(now())
   updatedAt       DateTime        @updatedAt
